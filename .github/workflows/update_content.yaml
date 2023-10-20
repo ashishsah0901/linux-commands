@@ -3,7 +3,7 @@ name: Update File on PR Merge
 on:
   pull_request:
     types:
-      - closed
+      - merged
 
 jobs:
   update-file:
@@ -12,8 +12,7 @@ jobs:
       - name: Check PR status
         if: github.event.pull_request.merged == true
         run: |
-          # Add your script or commands here to update the specific file.
-          # For example, you can use the GitHub API or other tools to modify the file.
+          echo "ABCD"
       - name: Commit and Push Changes
         run: |
           git config --global user.name "Your Name"
